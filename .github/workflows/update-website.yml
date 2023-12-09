@@ -36,35 +36,20 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: actions/checkout@v3
-      - name: echo
+      - name: github.repository
         run: echo ${{ github.repository }}
-      - name: clone
-        run: git clone https://github.com/NNJZSRPC/NNJZSRPC.github.io.git ./NNJZSRPC --depth=1
-      - name: ll
-        run: |
-          ls -a
-          pwd
-          cd ./NNJZSRPC/
-          pwd
-          ls -a
-      - name: cd
-        run: cd ./NNJZSRPC/
-      - name: ll
-        run: |
-          ls -a
-          pwd
+      - name: clone repository
+        run: git clone https://github.com/${{ github.repository }}.git ./NNJZSRPC --depth=1
       - name: branch
-        run: git branch
-      - name: ll
         run: |
-          ls -a
-          pwd
+          cd ./NNJZSRPC
+          git branch
+          ls -al
       - name: checkout
-        run: git checkout master
-      - name: ll
         run: |
-          ls -a
-          pwd
+          cd ./NNJZSRPC
+          git checkout master
+          ls -al
 
       # Runs a single command using the runners shell
       # - name: Run a one-line script
