@@ -44,6 +44,8 @@ jobs:
         run: ls -a
       - name: cd
         run: cd ./NNJZSRPC
+      - name: ll
+        run: ls -a
       - name: branch
         run: git branch
       - name: ll
