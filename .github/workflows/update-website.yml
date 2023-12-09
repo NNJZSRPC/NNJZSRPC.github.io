@@ -39,7 +39,11 @@ jobs:
       - name: github.repository
         run: echo ${{ github.repository }}
       - name: clone repository
-        run: git clone https://github.com/${{ github.repository }}.git ./NNJZSRPC --depth=1
+        run: |
+          git clone https://github.com/${{ github.repository }}.git ./NNJZSRPC --depth=1
+          cd ./NNJZSRPC
+          git fetch origin master
+          git fetch origin web
       - name: branch
         run: |
           cd ./NNJZSRPC
