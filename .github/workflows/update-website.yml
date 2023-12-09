@@ -41,19 +41,27 @@ jobs:
       - name: clone
         run: git clone https://github.com/NNJZSRPC/NNJZSRPC.github.io.git ./NNJZSRPC --depth=1
       - name: ll
-        run: ls -a
+        run: |
+          ls -a
+          pwd
       - name: cd
-        run: cd ./NNJZSRPC
+        run: cd ./NNJZSRPC/
       - name: ll
-        run: ls -a
+        run: |
+          ls -a
+          pwd
       - name: branch
         run: git branch
       - name: ll
-        run: ls -a
+        run: |
+          ls -a
+          pwd
       - name: checkout
         run: git checkout master
       - name: ll
-        run: ls -a
+        run: |
+          ls -a
+          pwd
 
       # Runs a single command using the runners shell
       # - name: Run a one-line script
