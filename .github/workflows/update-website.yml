@@ -44,6 +44,9 @@ jobs:
         run: |
           ls -a
           pwd
+          cd ./NNJZSRPC/
+          pwd
+          ls -a
       - name: cd
         run: cd ./NNJZSRPC/
       - name: ll
