@@ -43,7 +43,7 @@ jobs:
       - name: branch
         run: |
           cd ./NNJZSRPC
-          git branch
+          git branch -a
           ls -al
       - name: checkout
         run: |
