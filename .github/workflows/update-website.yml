@@ -40,18 +40,18 @@ jobs:
         run: echo ${{ github.repository }}
       - name: clone repository
         run: |
-          git clone https://github.com/${{ github.repository }}.git ./NNJZSRPC --depth=1
-          cd ./NNJZSRPC
+          git clone https://github.com/${{ github.repository }}.git -b source ./source --depth=1
+          git clone https://github.com/${{ github.repository }}.git -b master ./master --depth=1
           echo
-          git pull --all --depth=1
           echo
-          ls -al
+          ls -al ./source
+          ls -al ./master
           echo
           git branch -a
           echo
           ls -al
           echo
-          git checkout master
+          #git checkout master
           echo
           ls -al
 
