@@ -42,17 +42,17 @@ jobs:
         run: |
           git clone https://github.com/${{ github.repository }}.git ./NNJZSRPC --depth=1
           cd ./NNJZSRPC
-          git fetch origin master
-          git fetch origin web
-      - name: branch
-        run: |
-          cd ./NNJZSRPC
-          git branch -a
+          echo
+          git pull --all --depth=1
+          echo
           ls -al
-      - name: checkout
-        run: |
-          cd ./NNJZSRPC
+          echo
+          git branch -a
+          echo
+          ls -al
+          echo
           git checkout master
+          echo
           ls -al
 
       # Runs a single command using the runners shell
