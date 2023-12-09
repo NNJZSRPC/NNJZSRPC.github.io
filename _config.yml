@@ -1,12 +1,12 @@
-title: Hexo
+title: '南宁九中学生维权委员会'
 subtitle: ''
-description: ''
+description: '南宁九中学生维权委员会官网'
 keywords: null
-author: John Doe
-language: en
-timezone: ''
-url: http://example.com
-permalink: ':year/:month/:day/:title/'
+author: '南宁九中学生维权委员会'
+language: zh-CN
+timezone: 'Asia/Shanghai'
+url: https://example.com
+permalink: 'p/:title/'
 permalink_defaults: null
 pretty_urls:
   trailing_index: true
