@@ -19,12 +19,6 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -72,5 +66,11 @@ jobs:
         run: |
           cd ./master
           hexo generate
-          mv ./public/* ../web/
-          ls -alR ../web/
+      - name: Move Generated Files
+        run: |
+          rm -rf ./web/*
+          mv ./master/public/* ./web/
+          ls -alR ./web
+      - name: Git Push Web Branch
+        run: |
+          echo
