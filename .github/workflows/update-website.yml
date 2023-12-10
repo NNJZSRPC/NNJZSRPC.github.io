@@ -51,14 +51,16 @@ jobs:
           mv ./source/_config.yml ./master/_config.yml
           mv ./source/_config.icarus.yml ./master/_config.icarus.yml
           rm ./source/.gitignore
-          mv ./source/about ./master/source/about
-          mv ./source/contribute ./master/source/contribute
+          mv ./source/about ./master/source/
+          mv ./source/contribute ./master/source/
           mv ./source/* ./master/source/_posts/
           ls -alR ./master
+          ls -alR ./source
       - name: npm install
         run: |
           cd ./master/
           npm install
+          npm install hexo -g
       - name: Hexo Generate Files
         run: |
           cd ./master
