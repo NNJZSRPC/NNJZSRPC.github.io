@@ -15,7 +15,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -28,7 +28,7 @@ jobs:
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: github.repository
+      - name: Print github.repository
         run: echo ${{ github.repository }}
       - name: Clone repository
         run: |
@@ -57,7 +57,7 @@ jobs:
           # List files
           ls -alR ./master
           ls -alR ./source
-      - name: npm install
+      - name: Npm Install
         run: |
           cd ./master/
           npm install
