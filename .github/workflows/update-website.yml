@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Update Website
 
 # Controls when the workflow will run
@@ -13,7 +11,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN
 permissions:
   contents: write
   pages: write
@@ -47,8 +45,8 @@ jobs:
           # Move config files
           mv ./source/_config.yml ./master/_config.yml
           mv ./source/_config.icarus.yml ./master/_config.icarus.yml
-          # Delete .gitignore
-          rm ./source/.gitignore
+          # Delete README.md
+          rm ./source/README.md
           # Move /about and /contribute pages
           mv ./source/about ./master/source/
           mv ./source/contribute ./master/source/
