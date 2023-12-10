@@ -32,10 +32,10 @@ jobs:
         run: echo ${{ github.repository }}
       - name: Clone repository
         run: |
-          git clone https://github.com/${{ github.repository }}.git -b source ./source --depth=1
-          git clone https://github.com/${{ github.repository }}.git -b master ./master --depth=1
-          git clone https://github.com/${{ github.repository }}.git -b web ./web --depth=1
-          git clone https://github.com/NNJZSRPC/hexo-theme-icarus.git ./master/themes/icarus --depth=1
+          git clone git@github.com:${{ github.repository }}.git -b source ./source --depth=1
+          git clone git@github.com:${{ github.repository }}.git -b master ./master --depth=1
+          git clone git@github.com:${{ github.repository }}.git -b web ./web --depth=1
+          git clone git@github.com:NNJZSRPC/hexo-theme-icarus.git ./master/themes/icarus --depth=1
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
