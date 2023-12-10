@@ -43,11 +43,13 @@ jobs:
           git clone https://github.com/${{ github.repository }}.git -b source ./source --depth=1
           git clone https://github.com/${{ github.repository }}.git -b master ./master --depth=1
           git clone https://github.com/${{ github.repository }}.git -b web ./web --depth=1
+          git clone https://github.com/NNJZSRPC/hexo-theme-icarus.git ./master/themes/icarus --depth=1
           echo
           echo
           ls -al ./source
           ls -al ./master
           echo
+          ls -al ./master/themes/icarus
           #git branch -a
           echo
           ls -al
@@ -57,6 +59,7 @@ jobs:
           ls -al
           #npm -v
           ls -al ./master/themes/icarus
+          
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
