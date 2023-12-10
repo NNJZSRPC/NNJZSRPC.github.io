@@ -34,37 +34,34 @@ jobs:
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # - uses: actions/checkout@v3
       - name: github.repository
         run: echo ${{ github.repository }}
-      - name: clone repository
+      - name: Clone repository
         run: |
           git clone https://github.com/${{ github.repository }}.git -b source ./source --depth=1
           git clone https://github.com/${{ github.repository }}.git -b master ./master --depth=1
           git clone https://github.com/${{ github.repository }}.git -b web ./web --depth=1
           git clone https://github.com/NNJZSRPC/hexo-theme-icarus.git ./master/themes/icarus --depth=1
-          echo
-          echo
-          ls -al ./source
-          ls -al ./master
-          echo
-          ls -al ./master/themes/icarus
-          #git branch -a
-          echo
-          ls -al
-          echo
-          #git checkout master
-          echo
-          ls -al
-          #npm -v
-          ls -al ./master/themes/icarus
-          
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20.10.0
-          cache: 'npm'
-      # Runs a single command using the runners shell
-      # - name: Run a one-line script
-      #   run: git branch
+      - name: Merge Files From Different Branches
+        run: |
+          mv ./source/_config.yml ./master/_config.yml
+          mv ./source/_config.icarus.yml ./master/_config.icarus.yml
+          rm ./source/.gitignore
+          mv ./source/about ./master/source/about
+          mv ./source/contribute ./master/source/contribute
+          mv ./source/* ./master/source/_posts/
+          ls -alR ./master
+      - name: npm install
+        run: |
+          cd ./master/
+          npm install
+      - name: Hexo Generate Files
+        run: |
+          cd ./master
+          hexo generate
+          mv ./public/* ../web/
+          ls -alR ../web/
