@@ -48,14 +48,14 @@ jobs:
           ls -al ./source
           ls -al ./master
           echo
-          git branch -a
+          #git branch -a
           echo
           ls -al
           echo
           #git checkout master
           echo
           ls -al
-          npm -v
+          #npm -v
           ls -al ./master/themes/icarus
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
