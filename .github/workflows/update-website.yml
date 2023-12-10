@@ -48,14 +48,19 @@ jobs:
           node-version: 20.10.0
       - name: Merge Files From Different Branches
         run: |
-          ls -alR ./master
-          ls -alR ./source
+          # Create source dir
+          mkdir -p ./master/source/_posts/
+          # Move config files
           mv ./source/_config.yml ./master/_config.yml
           mv ./source/_config.icarus.yml ./master/_config.icarus.yml
+          # Delete .gitignore
           rm ./source/.gitignore
+          # Move /about and /contribute pages
           mv ./source/about ./master/source/
           mv ./source/contribute ./master/source/
-          mv -v ./source/* ./master/source/_posts/
+          # Move posts
+          mv ./source/* ./master/source/_posts/
+          # List files
           ls -alR ./master
           ls -alR ./source
       - name: npm install
