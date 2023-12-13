@@ -50,6 +50,9 @@ jobs:
           # Move /about and /contribute pages
           mv ./source/about ./master/source/
           mv ./source/contribute ./master/source/
+          # move assets
+          mv ./source/files ./master/source/
+          mv ./source/img ./master/source/
           # Move posts
           mv ./source/* ./master/source/_posts/
           # List files
@@ -74,10 +77,17 @@ jobs:
           cd ./web/
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git commit -am "Auto Update Website"
+          git add .
+          git commit -m "Auto Update Website"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: web
           directory: ./web/
+      - name: Git Logs
+        run: |
+          cd ./web/
+          git status
+          git reflog
+          git log
