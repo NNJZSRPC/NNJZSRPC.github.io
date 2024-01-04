@@ -125,7 +125,7 @@ navbar:
 # Page footer configurations
 footer:
     # Copyright text
-    copyright: "© 2023 南宁九中学生维权委员会<br/>网站访问量 (2024-01-05 起): <span id=\"nnjzsrpc-pv-box\">正在加载</span><script>(function () { var s = document.createElement('script'); s.src="https://pv.nnjz.tk/pv.js?path=" + location.pathname; document.head.appendChild(s); })();</script>"
+    copyright: "© 2023 南宁九中学生维权委员会<br/>网站访问量 (2024-01-05 起): <span id=\"nnjzsrpc-pv-box\">正在加载</span><script>(function () { var s = document.createElement('script'); s.src=\"https://pv.nnjz.tk/pv.js?path=\" + location.pathname; document.head.appendChild(s); })();</script>"
     # Links to be shown on the right of the footer section
     links:
         # Creative Commons:
