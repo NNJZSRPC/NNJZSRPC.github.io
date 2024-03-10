@@ -115,7 +115,7 @@ navbar:
     links:
         GitHub:
             icon: fab fa-github
-            url: https://github.com/NNJZSRPC/NNJZ-SRPC
+            url: https://github.com/NNJZSRPC/NNJZSRPC.github.io
         # Telegram:
         #     icon: fab fa-telegram
         #     url: https://t.me/
@@ -125,7 +125,7 @@ navbar:
 # Page footer configurations
 footer:
     # Copyright text
-    copyright: "© 2023 南宁九中学生维权委员会<br/>网站访问量 (2024-01-05 起): <span id=\"nnjzsrpc-pv-box\">正在加载</span><script>(function () { var s = document.createElement('script'); s.src=\"https://pv.nnjz.tk/pv.js?path=\" + location.pathname; document.head.appendChild(s); })();</script>"
+    copyright: "© 2023 - 2024 南宁九中学生维权委员会<br/>网站访问量 (2024-03-10 起): <span id=\"nnjzsrpc-pv-box\">正在加载</span><script>function pvcb (pv) { document.getElementById('nnjzsrpc-pv-box').innerText = pv; }; (function () { var s = document.createElement('script'); s.src=\"https://pv.cdn.dbi.cn.eu.org/stat.js?token=be127d84f3d75dd8&callback=pvcb&path=\" + location.pathname; document.head.appendChild(s); })();</script>"
     # Links to be shown on the right of the footer section
     links:
         # Creative Commons:
@@ -136,7 +136,7 @@ footer:
         #     url: https://creativecommons.org/licenses/by/4.0/
         GitHub:
             icon: fab fa-github
-            url: https://github.com/NNJZSRPC/NNJZ-SRPC
+            url: https://github.com/NNJZSRPC/NNJZSRPC.github.io
         # Telegram:
         #     icon: fab fa-telegram
         #     url: https://t.me/
@@ -259,7 +259,7 @@ widgets:
         social_links:
             GitHub:
                 icon: fab fa-github
-                url: https://github.com/NNJZSRPC/NNJZ-SRPC
+                url: https://github.com/NNJZSRPC/NNJZSRPC.github.io
             # Telegram:
             #     icon: fab fa-telegram
             #     url: https://t.me/
@@ -297,7 +297,7 @@ widgets:
         # Names and URLs of the sites
         links:
             投稿: /contribute
-            GitHub 项目: https://github.com/NNJZSRPC/NNJZ-SRPC
+            GitHub 存储库: https://github.com/NNJZSRPC/NNJZ-SRPC
             南宁市教育局: http://jy.nanning.gov.cn/
             自治区教育厅: http://jyt.gxzf.gov.cn/
             教育部: http://www.moe.gov.cn/
